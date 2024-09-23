@@ -14,8 +14,15 @@ public class StringTest {
     }
 
     @Test
+    @DisplayName("1,를 ,로 split 했을 때 1만을 포함하는 배열이 반환되는지 확인")
+    void onlyOne() {
+        String[] result = "1,".split(",");
+        assertThat(result).containsExactly("1");
+    }
+
+    @Test
     @DisplayName("특정 위치의 문자를 성공적으로 반환한다.")
-    void IndexTest() {
+    void indexTest() {
         String value = "abc";
         char result = value.charAt(1);
 
